@@ -1,0 +1,11 @@
+    <div class="appComp d-flex">
+        <app-sidebar *ngIf="isAuthenticated"></app-sidebar>
+        <div class="w-100 d-flex flex-column">
+            <div class="w-100">
+                <app-navbar *ngIf="isAuthenticated"></app-navbar>
+            </div>
+          <div class="d-flex flex-column justify-content-center h-100 component-container">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+    </div>

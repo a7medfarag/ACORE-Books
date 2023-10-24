@@ -1,0 +1,19 @@
+<tui-select (tuiValueChanges)="postValue($event)" [formControl]="inputControl"
+  [valueContent]="items ? stringify(items) : loading">
+  {{name}}
+  <input tuiTextfield [placeholder]="name" />
+  <ng-template tuiDataList>
+    <tui-data-list *ngIf="items; else loading">
+      <button tuiOption *ngFor="let item of items" [value]="item.id">
+        {{ item.item }}
+      </button>
+    </tui-data-list>
+  </ng-template>
+  <ng-template #loading>
+    <tui-loader class="tui-space_vertical-3 loader"></tui-loader>
+  </ng-template>
+</tui-select>
+<ng-container *ngIf="inputControl.invalid && inputControl.touched">
+  <tui-error class="validationMessages" *ngFor="let errorMsg of errorList" [error]="errorMsg">
+  </tui-error>
+</ng-container>

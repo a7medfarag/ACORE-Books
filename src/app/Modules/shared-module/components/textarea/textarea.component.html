@@ -1,0 +1,8 @@
+<tui-root>
+  <tui-textarea (input)="submitValue($event)" [formControl]="inputControl">{{name}}</tui-textarea>
+</tui-root>
+<ng-container *ngIf="inputControl.invalid && inputControl.touched">
+  <tui-error class="validationMessages" *ngFor="let errorMsg of errorList"
+  [error]="errorMsg">
+  </tui-error>
+</ng-container>

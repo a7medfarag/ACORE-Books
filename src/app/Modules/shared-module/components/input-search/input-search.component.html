@@ -1,0 +1,7 @@
+<tui-root>
+    <tui-input tuiHintContent="Safari 12.1 doesn't support" tuiHintDirection="bottom-right"
+        tuiTextfieldIconLeft="tuiIconSearchLarge" class="input" [formControl]="inputControl">
+        Search and Click
+        <input (change)="onInputChange($event)" placeholder="Author Name or Book Name" tuiTextfield />
+    </tui-input>
+</tui-root> 

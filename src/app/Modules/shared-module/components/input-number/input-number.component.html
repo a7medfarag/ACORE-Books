@@ -1,0 +1,12 @@
+<tui-root>
+    <tui-input-number 
+        [formControl]="inputControl" [prefix]="name == 'Book Price'? '$': '' " (input)="onInputChange($event)">
+        {{name}}
+    </tui-input-number>
+</tui-root>
+
+<ng-container *ngIf="inputControl.invalid && inputControl.touched">
+    <tui-error class="validationMessages" *ngFor="let errorMsg of errorList"
+               [error]="errorMsg">
+    </tui-error>
+</ng-container>

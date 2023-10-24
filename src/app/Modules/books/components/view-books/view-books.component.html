@@ -1,0 +1,33 @@
+<main *ngIf="!addBook && !deleteBook" class="books">
+    <header class="view-books-header">
+        <h2>
+            Books
+        </h2>
+    </header>
+    <section class="view-books-actions d-flex justify-content-between align-items-center">
+        <div class="view-books-actions-search">
+            <app-input-search (inputChanged)="getSearchValue($event)" [inputControl]="serachInput"></app-input-search>
+        </div>
+        <div class="view-books-actions-add">
+            <app-button (eventHandler)="openAddComp($event)"  [addIcon]="true" [btnName]="'Add Book'"></app-button>
+        </div>
+    </section>
+    <section class="view-books d-flex flex-column">
+        <div class="view-books-container">
+    
+            <div class="mt-5 d-flex flex-column justify-content-start align-items-center">
+                <app-table (viewBook)="viewBookComp($event)" (editBook)="openAddComp($event)" (deletewBook)="deleteBookFn($event)" [books]="paginatedData"></app-table>
+            </div>
+            <app-pagination [totalAmountOfLines]="totalAmountOfData" [size]="pageSize" [page]="pageNumber"
+                (changePage)="getAllBooks($event)"></app-pagination>
+        </div>
+    </section>
+    
+</main>
+
+<!-- open Add Componen -->
+<app-add-book *ngIf="addBook" [allBooks]="editedBook" (closeAddBook)="closeAddBook($event)" [openAddBook]="addBook"></app-add-book>
+<!-- open View Single Book Componen -->
+<app-show-book *ngIf="deleteBook" [openViewBook]="deleteBook" [ShowedBook]="editedBook" (closeDeleteBook)="closeViewBook()"></app-show-book>
+<!-- The Delete Popup -->
+<app-dicard-changes *ngIf="deletePopup" (deleteConfirmed)="deleteConfirmed()" (deleteCanceled)="deleteCanceled()"></app-dicard-changes>

@@ -1,0 +1,79 @@
+<main *ngIf="openAddBook" class="books">
+    <header class="view-books-header">
+        <h2>
+            <app-back-arrow (closePopups)="closeAddBookFn()"></app-back-arrow> Book
+        </h2>
+    </header>
+    <section class="view-books-actions d-flex justify-content-between align-items-center">
+        <form class="h-100 form-width" [formGroup]="addBook">
+            <div class="tui-row w-100 tui-row_sme h-100">
+                <div class="tui-col_5 h-100 d-flex flex-column">
+                    <div class="tui-form__row">
+                        <app-input-text [name]="handlers.Title" 
+                            [inputControl]="addBook.controls.Title"></app-input-text>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-input-text [name]="handlers.Author"
+                            [inputControl]="addBook.controls.Author"></app-input-text>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-single-select [name]="handlers.Category" [items]="categoriesData"
+                            [inputControl]="addBook.controls.Category"></app-single-select>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-input-number [name]="handlers.Price"
+                            [inputControl]="addBook.controls.Price"></app-input-number>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-input-text [name]="handlers.Version"
+                            [inputControl]="addBook.controls.Version"></app-input-text>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-single-select [name]="handlers.OlderVersion" [items]="versionsData"
+                            [inputControl]="addBook.controls.OlderVersion"></app-single-select>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-input-text [name]="handlers.Edition"
+                            [inputControl]="addBook.controls.Edition"></app-input-text>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-input-number [name]="handlers.ISBN" [inputControl]="addBook.controls.ISBN"></app-input-number>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-input-date [inputControl]="addBook.controls.Date"></app-input-date>
+                    </div>
+                </div>
+                <div class="tui-col_5 d-flex justify-content-center align-items-center flex-column">
+                    <div class="box-container">
+                    </div>
+                    <p class="box-container-text">
+                        Best Dimensions for book cover are 128 * 200
+                    </p>
+                    <div class="tui-form__row">
+                        <app-input-file 
+                            [inputControl]="addBook.controls.Cover"></app-input-file>
+                    </div>
+                    <div class="tui-form__row">
+                        <app-textarea [name]="handlers.Brief"
+                            [inputControl]="addBook.controls.Brief"></app-textarea>
+                    </div>
+                    <div class="btns mt-top mb-5 d-flex justify-content-between">
+                        <div class="tui-form__buttons">
+                          <app-button class="popupBtn" [btnName]="'Cancel'"  [appearence]="'secondary'"
+                                      (eventHandler)="closeAddBookFn()"></app-button>
+                        </div>
+
+                        <div class="tui-form__buttons">
+
+                          <app-button [disabledBtn]="!addBook?.valid"
+                                      [btnName]="'Save'" [type]="'button'"
+                                      [appearence]="'primary'"
+                                      (eventHandler)="addBookFn()"></app-button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+        </form>
+    </section>
+</main>

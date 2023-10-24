@@ -1,0 +1,61 @@
+.books {
+    height: 80%;
+
+    .view-books-header {
+        width: 95%;
+        margin-left: auto;
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .view-books-actions {
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        background-color: #fff;
+        padding: 1rem 2rem 2rem 2rem;
+        border-radius: 10px;
+
+        .section-container {
+            width: 100%;
+
+            .img-container {
+                width: 60%;
+
+                .cover {
+                    width: 30%;
+                    margin-right: 2rem;
+                }
+
+                .book-pages {
+                    .book-title {
+                        font-size: 1.5rem;
+                    }
+
+                    .pages {
+                        font-size: 1rem;
+                        margin-right: 1rem;
+                    }
+                }
+
+            }
+
+            .Brief {
+                width: 40%;
+
+                .custom-rounded {
+                    border-radius: 20px;
+                    background-color: #f6f6f6;
+                    padding: 0.25rem 0.5rem;
+                    text-align: center;
+                }
+            }
+        }
+
+        .btns {
+            width: 30%;
+        }
+    }
+
+}

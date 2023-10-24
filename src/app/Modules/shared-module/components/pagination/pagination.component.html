@@ -1,0 +1,9 @@
+<tui-root>
+  <tui-table-pagination
+    [total]="totalAmountOfLines"
+    [items]="totalArray"
+
+    [size]="size"
+    (paginationChange)="changePageData($event)"
+  ></tui-table-pagination>
+</tui-root>

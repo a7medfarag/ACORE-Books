@@ -1,0 +1,33 @@
+<div class="login d-flex justify-content-between align-items-center">
+
+    <div class="form_container d-flex flex-column justify-content-start align-items-center">
+        <div class="form_values d-flex flex-column justify-content-around align-items-start m-auto">
+            <div class="form_title">
+                <p>
+                    Please enter your email address and password
+
+                </p>
+                <p>
+                    to access your account
+                </p>
+            </div>
+            <form class="b-form w-100 d-flex flex-column justify-content-around" [formGroup]="loginForm">
+                <!-- Shared Input Email -->
+                <app-input-text [name]="emailVaule" [inputControl]="email"></app-input-text>
+                <!-- Shared Input Password -->
+                <app-input-password [passwordControl]="password" [name]="PassName"></app-input-password>
+                <a tuiLink class="forget_password">
+                    Forget Password
+                </a>
+                <app-button (eventHandler)="submitForm()" [btnName]="btnName" [appearence]="btnAppearence"></app-button>
+            </form>
+            <hr>
+            <div class="login-logo">
+                <img src="../../../../../assets/images/logo.webp" alt="login logo" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="login-image">
+        <img src="../../../../../assets/images/login-img.jpg" alt="login image" class="img-fluid">
+    </div>
+</div>

@@ -1,0 +1,79 @@
+{
+    "data":{
+        "Books":[
+            {
+                "Title":"Angular",
+                "Category":"Learning",
+                "Author":"Pablo Deeleman",
+                "ISBN":16922203540,
+                "Version":4,
+                "Pages":409,
+                "ToRead":true,
+                "Brief":"Angular Learning Book",
+                "Price": 20,
+                "Cover":"angular.jpg"
+            },
+            {
+                "Title":"react",
+                "Category":"Learning",
+                "Author":"Pablo Deeleman",
+                "ISBN":16922203540,
+                "Version":4,
+                "Pages":409,
+                "ToRead":false,
+                "Brief":"Angular Learning Book",
+                "Price": 20,
+                "Cover":"angular.jpg"
+            },
+            {
+                "Title":"viue",
+                "Category":"Learning",
+                "Author":"samir",
+                "ISBN":16922203540,
+                "Version":4,
+                "Pages":409,
+                "ToRead":false,
+                "Brief":"Angular Learning Book",
+                "Price": 24,
+                "Cover":"angular.jpg"
+            },
+            {
+                "Title":"typescript",
+                "Category":"Learning",
+                "Author":"mohamed",
+                "ISBN":"16922203540",
+                "Version":4,
+                "Pages":409,
+                "ToRead":true,
+                "Brief":"Angular Learning Book",
+                "Price": 30,
+                "Cover":"angular.jpg"
+            },
+            {
+                "Title":"javascript",
+                "Category":"Learning",
+                "Author":"John smith",
+                "ISBN":"16922203540",
+                "Version":4,
+                "Pages":409,
+                "ToRead":true,
+                "Brief":"Angular Learning Book",
+                "Price": 35,
+                "Cover":"angular.jpg"
+            },
+            {
+                "Title":"Angular",
+                "Category":"Learning",
+                "Author":"ahmed",
+                "ISBN":"16922203540",
+                "Version":4,
+                "Pages":409,
+                "ToRead":true,
+                "Brief":"Angular Learning Book",
+                "Price": 20,
+                "Cover":"angular.jpg"
+            }
+            
+        ]
+    }
+}

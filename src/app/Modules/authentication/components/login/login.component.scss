@@ -1,0 +1,54 @@
+// style of the login
+.login {
+    background-color: #fff;
+    height: 66%;
+    border-radius: 10px;
+    background-size: 100%;
+    margin: auto;
+
+    .form_container {
+        width: 50%;
+        height: 70%;
+
+
+        .form_values {
+            width: 60%;
+            height: 90%;
+            font-family: 'cairo';
+
+            .form_title {
+                color: #000;
+                font-weight: bold;
+                font-size: 1rem;
+
+            }
+            .forget_password {
+                color: #000;
+                margin-left: auto;
+                text-decoration: none;
+                margin-top: 1rem;
+                cursor: pointer;
+            }
+
+            hr {
+                width: 100%;
+                padding: 1px;
+                background-color: var(--tui-secondary);
+            }
+            .login-logo {
+                margin-top: 1rem;
+                width: 40%;
+            }
+        }
+
+        app-button {
+            width: 60%;
+        }
+    }
+
+    &-image {
+        width: 36%;
+    }
+}
+
+// end style of the login

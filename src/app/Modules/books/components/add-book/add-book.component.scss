@@ -1,0 +1,30 @@
+.view-books-header{
+    width: 95%;
+    margin-left: auto;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+.form-width{
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 1rem 2rem 2rem 2rem;
+    border-radius: 10px;
+    .tui-form__row{
+        margin-top: .75rem;
+        width: 100%;
+       
+    }
+}
+.box-container{
+    width: 128px;
+    height: 200px;
+    -webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.75);
+}
+.box-container-text{
+    font-size: .8rem;
+    color: #000;
+}

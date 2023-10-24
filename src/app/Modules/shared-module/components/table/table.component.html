@@ -1,0 +1,38 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Book Category </th>
+            <th> Book Author</th>
+            <th >Book ISBN</th>
+            <th >Book Version</th>
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; let i = index;">
+
+            <td>
+                {{book.Title}}
+            </td>
+            <td>
+                {{book.Category}}
+            </td>
+            <td>
+                {{book.Author}}
+            </td>
+            <td>
+                {{book.ISBN}}
+            </td>
+            <td>
+                {{book.Version}}
+            </td>
+            <td>
+                <app-view (postId)="viewBookFn(i)"></app-view>
+                <app-EditIcon (openPopup)="editBookFn(i)"></app-EditIcon>
+                <app-delete (click)="deleteBookFn(i)"></app-delete>
+            </td>
+        </tr>
+    </tbody>
+</table>

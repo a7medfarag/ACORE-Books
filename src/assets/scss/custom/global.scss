@@ -1,0 +1,320 @@
+@import "./variables";
+//@import "ace-builds/css/theme/sqlserver";
+
+html,
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  height: 100%;
+  counter-reset: item-counter;
+  font-family: $tui-font-text !important;
+}
+
+.toast-container.toast-top-center {
+  width: 100%;
+  top: 15px;
+}
+
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+p {
+  margin: 0;
+}
+
+:root {
+  font-size: 1rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+
+:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+// Style of the app root
+app-root {
+  min-height: 100vh;
+
+  router-outlet+* {
+    display: flex;
+    height: 100%;
+  }
+
+  .appComp {
+    height: 100%;
+
+    app-sidebar {
+      width: 10%;
+
+      @media(max-width:1600px) {
+        width: 14%;
+      }
+    }
+
+    router-oulet {
+      width: 86%;
+    }
+
+    .component-container {
+      background-color: $tui-background;
+      padding: 1rem;
+      padding-top: 0;
+    }
+  }
+
+
+
+  .sideBarSideMenu,
+  .sidebar,
+  .side-form {
+    background-color: #fff;
+  }
+
+  background-color: #F8F8F9;
+
+  .side-form-body,
+  .login-form {
+    background-color: #F8F8F9;
+  }
+
+}
+
+
+// start style of the input password
+tui-input-password {
+  margin-top: 1.4rem;
+}
+
+// end style of the input password
+
+// style of validation messages
+.validationMessages {
+  text-align: left;
+}
+
+// end style of validation messages
+// style of the navbar
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+
+  .title p {
+    color: $primary;
+  }
+
+  .dropdown-title {
+    color: $secondary;
+    font-size: 1.5rem;
+  }
+
+  .dropdown-items {
+    top: 100%;
+    right: 24%;
+    background-color: #fff;
+    font-size: .9rem;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 2px 22px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 2px 22px -7px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 2px 22px -7px rgba(0, 0, 0, 0.75);
+  }
+}
+
+// end style of the navbar
+
+// style of the side bar
+.sideBar {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 2rem;
+
+  .logo {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+
+  .sideBarMenuLink {
+    cursor: pointer;
+    background-color: $border-color;
+    padding: .5rem;
+    border-right: 2px solid #ea008a;
+    text-align: center;
+
+    tui-svg {
+      margin-right: .5rem;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .activeLink {
+      color: $tui-primary;
+      font-weight: bold;
+      background-color: $tui-secondary-text;
+    }
+
+    margin-bottom: 1rem;
+  }
+
+}
+
+// end style of the side bar
+
+
+// Start of popup styles
+.popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .popupSide {
+    width: 25%;
+    background-color: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.75);
+    .addPopop {
+      width: 80%;
+      margin: 0 auto;
+      height: 100%;
+
+      .popupHeader {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (400px<=width <=1600px) {
+      form {
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+
+      .addPopop {
+        width: 90%;
+      }
+    }
+
+    .discardChangesContent {
+      padding: 1rem;
+      width: 80%;
+    }
+  }
+
+  .btns {
+    width: 100%;
+  }
+}
+
+// end of popup styles
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse !important;
+
+  th,
+  td {
+    border: 0;
+
+    .assignEnv {
+      color: #31A2E0;
+      font-weight: 400;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  th {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.125rem;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  td {
+    color: $tui-secondary-text;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  tr:nth-child(odd) td {
+    background-color: #F8F8F9;
+  }
+}
+
+
+
+app-back-arrow {
+  color: #2F354D;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.t-text {
+  color: #fff !important;
+}
+
+
+.tui-form__header {
+  color: $tui-primary-text !important;
+}
+
+app-add-book {
+  width: 100%;
+  height: 86vh;
+}
+
+tui-textarea {
+  .t-outline {
+    background-color: #f5f8ff !important;
+  }
+
+}
+
+tui-input-number {
+  .tui-autofill {
+    background-color: #f5f8ff !important;
+  }
+}
+
+tui-input {
+  .tui-autofill {
+    background-color: #f5f8ff !important;
+  }
+}
+tui-input-date {
+  .tui-autofill {
+    background-color: #f5f8ff !important;
+  }
+}
+tui-select {
+  .tui-autofill {
+    background-color: #f5f8ff !important;
+  }
+}
+app-show-book{
+  width: 100%;
+}

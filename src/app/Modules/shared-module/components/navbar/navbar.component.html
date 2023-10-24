@@ -1,0 +1,23 @@
+<div class="navbar d-flex justify-content-between align-items-center">
+    <div class="title">
+        <p class="bold">
+            Acore admin dashboard
+        </p>
+    </div>
+    <div class="dropdown position-relative" (click)="toggleDropdown()">
+        <p class="bold dropdown-title cursor-pointer">
+            Super Admin
+        </p>
+        <ng-container *ngIf="isOpen">
+            <div class="dropdown-items position-absolute">
+                <p class="dropdown-items-email">
+                    {{userEmail}}
+                </p>
+                <p class="cursor-pointer" (click)="logOutFn()">
+                    Logout
+                </p>
+            </div>
+    </ng-container>
+    </div>
+</div>
+

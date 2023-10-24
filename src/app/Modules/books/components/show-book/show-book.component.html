@@ -1,0 +1,72 @@
+<main *ngIf="openViewBook && !openEditBook" class="books">
+    <header class="view-books-header">
+        <h2>
+            <app-back-arrow (closePopups)="backEvent()"></app-back-arrow> Details
+        </h2>
+    </header>
+    <section class="view-books-actions d-flex justify-content-between">
+      <div class="section-container">
+        <div class="img-container d-flex">
+            <div class="cover">
+                <img [src]="imgSrc" alt="" class="img-fluid">
+            </div>
+            <div class="book-pages">
+                <div class="book-title bold color-secondary mb-5">
+                    {{ShowedBook.Title}}
+                </div>
+                <div class="book-pages d-flex">
+                    <div class="pages">
+                        <p class="color-primary bold mb-3">{{ShowedBook.Pages}}</p>
+                        <p class="color-secondary">Pages</p>
+                    </div>
+                    <div class="pages">
+                        <p class="color-primary bold mb-3">{{ShowedBook.ToRead}}</p>
+                        <p class="color-secondary">To Read</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Brief d-flex  justify-content-between">
+            <div class="d-flex flex-column">
+                <p class="color-secondary fontsize-1-125 mb-3">
+                    {{ShowedBook.Author}}
+                </p>
+                <p class="color-primary bold fontsize-1-125 mb-3">
+                    {{ShowedBook.Price | currency}}
+                </p>
+                <p class="color-secondary fontsize-1-125 mb-3">
+                    {{ShowedBook.ISBN}}
+                </p>
+                <p class="color-secondary fontsize-1-125 mb-3">
+                    Version: {{ShowedBook.Version}}
+                </p>
+                <p class="color-secondary fontsize-1-125 mb-3 custom-rounded">
+                    {{ShowedBook.Category}}
+                </p>
+            </div>
+            <div>
+                <p class="bold color-secondary font-1-5 mb-5">Brief</p>
+                <p class="color-secondary fontsize-1">{{ShowedBook.Brief}}</p>
+            </div>
+        </div>
+      </div>
+      <div class="btns d-flex justify-content-center">
+        <div class="tui-form__buttons mr-5">
+            <app-button class="popupBtn" [btnName]="'Delete'"  [appearence]="'secondary'"
+                        (eventHandler)="deleteBookFn()"></app-button>
+          </div>
+
+          <div class="tui-form__buttons">
+
+            <app-button
+                        [btnName]="'Edit Book'" [type]="'button'"
+                        [appearence]="'primary'"
+                        (eventHandler)="addEditBookFn()"></app-button>
+          </div>
+      </div>
+    </section>
+</main>
+<!-- The Delete Popup -->
+<app-dicard-changes *ngIf="deletePopup" (deleteConfirmed)="deleteConfirmed()" (deleteCanceled)="deleteCanceled()"></app-dicard-changes>
+<!-- to route to edit the book -->
+<app-add-book *ngIf="openEditBook" [allBooks]="ShowedBook"></app-add-book>
